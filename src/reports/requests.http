@@ -1,0 +1,27 @@
+### create repost
+
+POST http://localhost:3000/reports
+content-type: application/json
+
+{
+    "make": "mitsubishi",
+    "model": "asx",
+    "year": 2014,
+    "mileage": 1000,
+    "lng": 0,
+    "lat": 0,
+    "price": 16000
+}
+
+###approve report
+PATCH http://localhost:3000/reports/15
+content-type: application/json
+
+{ "approved": true }
+
+### Get estimate for an existing vechicle
+GET http://localhost:3000/reports?make=mitsubishi&model=asx&lng=0&lat=0&mileage=1000&year=2015
+
+
+### Get filtereable sortable
+GET http://localhost:3000/reports/firtable?model=Corolla&sortBy='year'
